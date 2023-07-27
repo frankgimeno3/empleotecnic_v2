@@ -17,11 +17,11 @@ const Notificaciones: NextPage<NotificacionesProps> = ({
   const [element, setElement] = useState<string>("Inicio");
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row w-screen">
       <Navleft setElement={setElement} element={element} />
 
-      <div className="flex flex-col ml-24 pl-24 w-screen">
-        <div className="pl-2">
+      <div className="flex flex-col ml-24 pl-24 h-screen w-full">
+        <div className="pl-2 ">
           <Navtop />
 
           <div className="flex flex-col w-full">
