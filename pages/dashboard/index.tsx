@@ -1,7 +1,7 @@
-import Tarjetanotificacion from "../../components/Dashboard/Tarjetanotificacion";
+// import Tarjetanotificacion from "../../components/Dashboard/Tarjetanotificacion";
 import React from "react";
-import Navbar from "../../components/Navbar/NavbarIn";
-import Navbarleft from "../../components/Navbar/Navbarleft";
+import Navtop from "../../components/navbar/Navtop";
+import Navbarleft from "../../components/navbar/Navleft";
 import Cookies from "js-cookie";
 import jwt_decode from "jwt-decode";
 import { GetServerSideProps, NextPage } from 'next';
@@ -13,17 +13,16 @@ interface NotificacionesProps {
 
 const Notificaciones: NextPage<NotificacionesProps> = ({ loggedUserName, loggedAccount }) => {
   return (
-    <div>
-      <Navbar />
-      <div className="flex flex-row mt-10 pt-5 w-screen  ">
-        <Navbarleft />
-        <div className="flex flex-col w-full ml-24 pl-24">
+    <div className="flex flex-row">
+              <Navbarleft />
+
+      <div className="flex flex-col ml-24 pl-24 w-screen  ">
+        <div className=" pl-2">
+      <Navtop />
+
+        <div className="flex flex-col w-full ">
           <div className="bg-gray-100">
-            <div className="pt-7 pb-3 px-20 bg-white  shadow">
-              <h1 className="text-cyan-950 px-10 text-xl ">
-                Saludos, <span className="font-bold">{loggedUserName}</span>
-              </h1>
-            </div>
+  
 
             <div className="flex-column mt-2 shadow bg-white min-h-screen mx-20 ">
               <div className="flex flex-row  py-3 justify-between">
@@ -47,14 +46,15 @@ const Notificaciones: NextPage<NotificacionesProps> = ({ loggedUserName, loggedA
                 </div>
               </div>
               <div className="flex-column ">
-                {[...Array(5)].map((_, index) => (
+                {/* {[...Array(5)].map((_, index) => (
                   <Tarjetanotificacion key={index} loggedAccount={loggedAccount} />
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

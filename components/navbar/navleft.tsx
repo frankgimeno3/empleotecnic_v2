@@ -30,7 +30,7 @@ const Navleft: React.FC = () => {
       <div style={columnStyles}>
         <div>
           <Link href="/">
-            <a>EMPLEOTECNIC.COM</a>
+            <p>EMPLEOTECNIC.COM</p>
           </Link>
         </div>
         <div>
