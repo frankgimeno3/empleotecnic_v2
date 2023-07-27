@@ -25,7 +25,7 @@ const Navtop: React.FC = () => {
   };
 
   return (
-    <nav className="flex flex-row bg-white ">
+    <nav className="flex flex-row bg-white shadow ">
       <div className="pt-7 pb-3 px-20 bg-white  shadow">
         <h1 className="text-cyan-950 px-10 text-xl ">
           El contenido de esta nav debe ser dinámico y afectar al resto del
