@@ -33,37 +33,47 @@ const Navleft: React.FC<NavbarleftProps> = ({ setElement, element }) => {
     }
     router.push("/");
   };
-
+  const navStyle = {
+    backgroundImage: "linear-gradient(to bottom, #374151, #1c2331)",
+  };
   return (
-    <nav className="bg-slate-800 text-white py-5    w-400 pr-5 fixed top-0 left-0 h-screen flex flex-col justify-between shadow">
-      <div className="flex flex-col text-left pl-4">
-        <div className="flex flex-row font-light pt-5 ">
+    <nav
+      style={navStyle}
+      className="bg-slate-900 text-white py-2 w-400 pr-5 fixed top-0 left-0 h-screen flex flex-col justify-between shadow"
+    >
+      <div className="flex flex-col text-left ">
+        <div className="flex flex-row font-light pt-3 pl-6">
           <Link href="/dashboard">
             <p className="text-xs">
-              <span className="font-bold text-2xl">emple<span className="text-red-600 font-bolder">o</span>tecnic</span> .com
+              <span className="font-bold text-2xl">
+                emple<span className="text-red-600 font-bolder">o</span>tecnic
+              </span>{" "}
+              .com
             </p>
           </Link>
         </div>
 
         <div
-          className={`flex flex-row  py-1.5 flex flex-row align-center py-2 pl-2 pt-8 text-sm${
-            element === "Perfil" ? "font-red-600" : " "
+          className={`flex flex-row py-1.5 mt-6 pl-6 ${
+            element === "Profile" ? "bg-gray-200 bg-opacity-10" : ""
           }`}
-          onClick={() => handleElementClick("Perfil")}
+          onClick={() => handleElementClick("Profile")}
         >
-          <Image
-            src="/navicons/profileicon2.png"
-            alt="Profile Icon"
-            width={40}
-            height={40}
-          />
-          <h2 className="align-center py-2 pl-2">Mi Perfil</h2>
+          <div className="flex bg-white rounded-full  overflow-hidden align-center text-center  ">
+            <Image
+              src="/navicons/profileicon2.png"
+              alt="Profile Icon"
+              width={40}
+              height={40}
+            />
+          </div>
+
+          <h2 className="align-center py-2 pl-2 text-sm">Mi Perfil</h2>
         </div>
       </div>
-
       <div className="flex flex-col    text-sm">
         <div
-          className={`flex flex-row pl-4  py-1.5 ${
+          className={`flex flex-row pl-6 py-1.5 ${
             element === "Inicio" ? "bg-gray-200 bg-opacity-10" : ""
           }`}
           onClick={() => handleElementClick("Inicio")}
@@ -79,10 +89,10 @@ const Navleft: React.FC<NavbarleftProps> = ({ setElement, element }) => {
           <h2 className="pt-2 pl-2">Inicio</h2>
         </div>
         <div
-          className={`flex flex-row pl-4 py-1.5 ${
-            element === "Ofertasempleo" ? "bg-gray-200 bg-opacity-10" : ""
+          className={`flex flex-row pl-6 py-1.5 ${
+            element === "Ofertas" ? "bg-gray-200 bg-opacity-10" : ""
           }`}
-          onClick={() => handleElementClick("Ofertasempleo")}
+          onClick={() => handleElementClick("Ofertas")}
         >
           <div className="flex bg-white rounded-full  overflow-hidden align-center text-center  ">
             <Image
@@ -95,7 +105,7 @@ const Navleft: React.FC<NavbarleftProps> = ({ setElement, element }) => {
           <h2 className="pt-2 pl-2">Ofertas de Empleo</h2>
         </div>
         <div
-          className={`flex flex-row w-full pl-4 py-1.5 ${
+          className={`flex flex-row w-full pl-6 py-1.5 ${
             element === "Bolsa" ? "bg-gray-200 bg-opacity-10" : ""
           }`}
           onClick={() => handleElementClick("Bolsa")}
@@ -109,10 +119,9 @@ const Navleft: React.FC<NavbarleftProps> = ({ setElement, element }) => {
             />
           </div>
           <h2 className="pt-2 pl-2 pr-3">Bolsa de trabajadores</h2>
-          
-         </div>
+        </div>
         <div
-          className={`flex flex-row pl-4 py-1.5 ${
+          className={`flex flex-row pl-6 py-1.5 ${
             element === "Seguimientos" ? "bg-gray-200 bg-opacity-10" : ""
           }`}
           onClick={() => handleElementClick("Seguimientos")}
@@ -128,11 +137,10 @@ const Navleft: React.FC<NavbarleftProps> = ({ setElement, element }) => {
           <h2 className="pt-2 pl-2 ">Seguimientos</h2>
         </div>
       </div>
-
-      <div className="flex flex-row  text-slate-800 shadow pl-2 text-center">
+      <div className="flex flex-row  text-slate-900   pl-6 text-center">
         <button
           onClick={handleLogout}
-          className="text-center  px-2 py-1.5  text-sm font-medium mx-1 bg-white rounded-lg"
+          className="text-center  px-2 py-1.5  text-sm font-medium mx-1 bg-white rounded-lg shadow"
         >
           Cerrar Sesión
         </button>
