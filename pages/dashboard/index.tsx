@@ -45,7 +45,7 @@ const Home: NextPage<HomeProps> = ({
 
       <div className="flex flex-col ml-24 pl-24 w-screen min-h-screen">
             <Navtop />
-            <div className="flex flex-col bg-slate-300 align-center p-10 h-full">
+            <div className="flex flex-col bg-slate-300 align-center pl-10 pr-5 h-full">
               {renderComponent()}
             </div>
       </div>

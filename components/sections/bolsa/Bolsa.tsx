@@ -1,15 +1,27 @@
-import React, { CSSProperties } from "react";
- import { useRouter } from "next/router";
- 
-const Bolsa: React.FC = () => {
+import React from "react";
+import { useRouter } from "next/router";
+import Resultado from "./Resultadotrab";
+
+const Ofertas: React.FC = () => {
   const router = useRouter();
- 
+
   return (
-    <div className="flex flex-col  ">
-         <h1 className="text-cyan-950 px-10 text-xl ">
-         Este es el contenido para BOLSA
-        </h1>
-     </div>
+    <div className="flex flex-row w-full max-h-screen py-5 pl-8">
+      <div className="flex flex-row bg-white rounded-lg w-full    shadow overflow-hidden">
+        <div className="flex flex-col bg-white rounded-lg shadow   overflow-y-auto">
+          <Resultado />
+        </div>
+      </div>
+      <div
+        className="flex flex-col bg-white rounded-lg ml-5 shadow  w-60 pt-5 "
+        style={{ position: "sticky", top: 0 }}
+      >
+ 
+           <h2 className=" mx-5  ">Criterios de búsqueda  </h2>
+ 
+      </div> 
+    </div>
   );
 };
-export default Bolsa;
+
+export default Ofertas;
